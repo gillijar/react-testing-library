@@ -1,6 +1,6 @@
 import { screen, render } from "@testing-library/react";
 import userEvent from "@testing-library/user-event";
-import InputForm from "../components/InputForm";
+import InputForm from "../components/Input Form/InputForm";
 
 // initializing setup for InputForm and less repetitive code
 const setup = () => render(<InputForm />);

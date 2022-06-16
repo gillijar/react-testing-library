@@ -1,6 +1,7 @@
 import logo from "./logo.svg";
 import "./App.css";
-import InputForm from "./components/InputForm";
+import InputForm from "./components/Input Form/InputForm";
+import StockData from "./components/Stock Data/StockData";
 
 function App() {
   return (
@@ -20,6 +21,7 @@ function App() {
         </a>
       </header>
       <InputForm />
+      <StockData />
     </div>
   );
 }
