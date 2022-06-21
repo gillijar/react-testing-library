@@ -1,0 +1,17 @@
+.survey {
+  border: 3px solid #000;
+  width: 60%;
+  padding: 3rem 0;
+  margin: 0 auto;
+  border-radius: 0.5rem;
+  background: rgb(237, 237, 237);
+  overflow: hidden;
+}
+
+.survey-container {
+  display: flex;
+}
+
+.survey-input {
+  min-width: 100%;
+}

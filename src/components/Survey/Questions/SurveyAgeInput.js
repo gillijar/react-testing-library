@@ -1,6 +1,8 @@
+import classes from "../Survey.module.css";
+
 export default function SurveyNameInput(props) {
   return (
-    <section>
+    <section className={classes["survey-input"]}>
       <label htmlFor="age-input">
         What's your age? <span aria-label="required">*</span>
       </label>

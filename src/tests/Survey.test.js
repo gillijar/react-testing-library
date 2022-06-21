@@ -148,12 +148,27 @@ test("form container has correct styles when next and back buttons are pushed to
   // click next button mulitple times and check for correct values
   const nextBtn = screen.getByRole("button", { name: /next/i });
 
-  checkForCorrectTransformPercentage(nextBtn, formContainer, 100);
-  checkForCorrectTransformPercentage(nextBtn, formContainer, 200);
-  checkForCorrectTransformPercentage(nextBtn, formContainer, 300);
-  checkForCorrectTransformPercentage(nextBtn, formContainer, 400);
+  checkForCorrectTransformPercentage(nextBtn, formContainer, -100);
+  checkForCorrectTransformPercentage(nextBtn, formContainer, -200);
+  checkForCorrectTransformPercentage(nextBtn, formContainer, -300);
+  checkForCorrectTransformPercentage(nextBtn, formContainer, -400);
 
   const backBtn = screen.getByRole("button", { name: /back/i });
-  checkForCorrectTransformPercentage(backBtn, formContainer, 300);
-  checkForCorrectTransformPercentage(backBtn, formContainer, 200);
+  checkForCorrectTransformPercentage(backBtn, formContainer, -300);
+  checkForCorrectTransformPercentage(backBtn, formContainer, -200);
+});
+
+test("submit button is disabled and then enabled when all input fields are filled out", () => {
+  setup();
+
+  const nextBtn = screen.getByRole("button", { name: /next/i });
+
+  userEvent.click(nextBtn);
+  userEvent.click(nextBtn);
+  userEvent.click(nextBtn);
+  userEvent.click(nextBtn);
+
+  const submitButton = screen.getByRole("button", { name: /submit/i });
+  expect(submitButton).toBeDisabled();
+  // test
 });

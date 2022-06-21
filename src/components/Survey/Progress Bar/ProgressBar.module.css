@@ -1,12 +1,15 @@
 .progress-bar__container {
-  height: 30px;
-  width: 70%;
+  height: 1.5rem;
+  width: 50%;
   border: 2px solid black;
+  margin: 0 auto;
+  overflow: hidden;
+  border-radius: 1rem;
 }
 
 .progress-bar {
   height: 100%;
   width: 100%;
   background: lime;
-  border: 2px solid red;
+  border-radius: 1rem;
 }

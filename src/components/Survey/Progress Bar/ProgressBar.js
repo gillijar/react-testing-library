@@ -8,7 +8,7 @@ export default function ProgressBar({ formQuestion }) {
           data-testid="progress-bar"
           className={classes["progress-bar"]}
           style={{
-            transform: `translateX(-${100 - (100 / 5) * formQuestion}%)`,
+            transform: `translateX(${-100 + (100 / 5) * formQuestion}%)`,
           }}
         ></div>
       </div>

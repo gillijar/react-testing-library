@@ -1,6 +1,8 @@
+import classes from "../Survey.module.css";
+
 export default function SurveyCheckbox() {
   return (
-    <section>
+    <section className={classes["survey-input"]}>
       <p>
         What did you like most about working with us? (Choose all that apply)
       </p>
