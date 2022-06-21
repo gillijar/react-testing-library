@@ -1,8 +1,9 @@
 import SurveyContainer from "./SurveyContainer";
+import classes from "./Survey.module.css";
 
 export default function Survey() {
   return (
-    <div>
+    <div className={classes.survey}>
       <p>Let us know about your experience!</p>
       <SurveyContainer />
     </div>

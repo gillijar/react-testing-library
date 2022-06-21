@@ -1,4 +1,5 @@
 import { useState, useRef } from "react";
+import classes from "./Survey.module.css";
 import ProgressBar from "./Progress Bar/ProgressBar";
 import SurveyNameInput from "./Questions/SurveyNameInput";
 import SurveyAgeInput from "./Questions/SurveyAgeInput";
@@ -11,6 +12,9 @@ export default function SurveyContainer() {
 
   const formLength = 5;
   const [formQuestion, setFormQuestion] = useState(1);
+  const [disabled, setDisabled] = useState(true);
+
+  // set up functionality for validity to check if submit button is disabled or enabled
 
   const goBackHandler = () => {
     setFormQuestion(formQuestion - 1);
@@ -38,8 +42,9 @@ export default function SurveyContainer() {
     <form onSubmit={submitFormHandler}>
       <ProgressBar formQuestion={formQuestion} />
       <div
+        className={classes["survey-container"]}
         data-testid="form-container"
-        style={{ transform: `translateX(${100 * (formQuestion - 1)}%)` }}
+        style={{ transform: `translateX(${-100 * (formQuestion - 1)}%)` }}
       >
         <SurveyNameInput nameInput={nameInputRef} />
         <SurveyAgeInput ageInput={ageInputRef} />
@@ -57,7 +62,11 @@ export default function SurveyContainer() {
             Next
           </button>
         )}
-        {formQuestion === formLength && <button type="submit">Submit</button>}
+        {formQuestion === formLength && (
+          <button type="submit" disabled={disabled}>
+            Submit
+          </button>
+        )}
       </div>
     </form>
   );

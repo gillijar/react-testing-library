@@ -1,6 +1,8 @@
+import classes from "../Survey.module.css";
+
 export default function SurveyRadio() {
   return (
-    <section>
+    <section className={classes["survey-input"]}>
       <p>Would you recommend us to friends, family, colleagues?</p>
 
       <div>

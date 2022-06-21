@@ -1,6 +1,8 @@
+import classes from "../Survey.module.css";
+
 const SurveyNameInput = (props) => {
   return (
-    <section>
+    <section className={classes["survey-input"]}>
       <label htmlFor="name-input">
         What's your name? <span aria-label="required">*</span>
       </label>
